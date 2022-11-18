@@ -8,12 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		83023CFB2925EC03004F8250 /* FinityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023CFA2925EC03004F8250 /* FinityApp.swift */; };
-		83023CFD2925EC03004F8250 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023CFC2925EC03004F8250 /* ContentView.swift */; };
 		83023CFF2925EC04004F8250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83023CFE2925EC04004F8250 /* Assets.xcassets */; };
 		83023D022925EC04004F8250 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83023D012925EC04004F8250 /* Preview Assets.xcassets */; };
 		83023D0C2925EC04004F8250 /* FinityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D0B2925EC04004F8250 /* FinityTests.swift */; };
 		83023D162925EC04004F8250 /* FinityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D152925EC04004F8250 /* FinityUITests.swift */; };
 		83023D182925EC04004F8250 /* FinityUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D172925EC04004F8250 /* FinityUITestsLaunchTests.swift */; };
+		83023D262925F374004F8250 /* LaunchScreenStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D252925F374004F8250 /* LaunchScreenStep.swift */; };
+		83023D282925F39D004F8250 /* LaunchScreenStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D272925F39D004F8250 /* LaunchScreenStateManager.swift */; };
+		83023D2C2925F4A6004F8250 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D2B2925F4A6004F8250 /* LaunchScreenView.swift */; };
+		83023D2F2925F8BF004F8250 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D2E2925F8BF004F8250 /* RegistrationView.swift */; };
+		83023D322925FC73004F8250 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D312925FC73004F8250 /* Color.swift */; };
+		83023D3529261889004F8250 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 83023D3429261889004F8250 /* GoogleSignIn */; };
+		83023D3729261889004F8250 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 83023D3629261889004F8250 /* GoogleSignInSwift */; };
+		83023D412926920B004F8250 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D402926920B004F8250 /* TimelineView.swift */; };
+		83023D43292699B4004F8250 /* GoogleAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D42292699B4004F8250 /* GoogleAuthModel.swift */; };
+		83023D4B29277C91004F8250 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 83023D4A29277C91004F8250 /* FirebaseFirestore */; };
+		83023D4D29277C91004F8250 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 83023D4C29277C91004F8250 /* FirebaseFirestoreCombine-Community */; };
+		83023D4F29277C91004F8250 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 83023D4E29277C91004F8250 /* FirebaseFirestoreSwift */; };
+		83023D5129277DC9004F8250 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83023D5029277DC9004F8250 /* GoogleService-Info.plist */; };
+		83023D5329277E55004F8250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D5229277E55004F8250 /* AppDelegate.swift */; };
+		83023D58292780ED004F8250 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D57292780ED004F8250 /* FirestoreManager.swift */; };
+		83023D5A292792C9004F8250 /* Tangerine-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83023D59292792C9004F8250 /* Tangerine-Bold.ttf */; };
+		83023D5C292795DF004F8250 /* GreatVibes-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83023D5B292795DF004F8250 /* GreatVibes-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +52,6 @@
 /* Begin PBXFileReference section */
 		83023CF72925EC03004F8250 /* Finity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83023CFA2925EC03004F8250 /* FinityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinityApp.swift; sourceTree = "<group>"; };
-		83023CFC2925EC03004F8250 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		83023CFE2925EC04004F8250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83023D012925EC04004F8250 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		83023D072925EC04004F8250 /* FinityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +59,19 @@
 		83023D112925EC04004F8250 /* FinityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83023D152925EC04004F8250 /* FinityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinityUITests.swift; sourceTree = "<group>"; };
 		83023D172925EC04004F8250 /* FinityUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinityUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		83023D252925F374004F8250 /* LaunchScreenStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenStep.swift; sourceTree = "<group>"; };
+		83023D272925F39D004F8250 /* LaunchScreenStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenStateManager.swift; sourceTree = "<group>"; };
+		83023D2B2925F4A6004F8250 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		83023D2E2925F8BF004F8250 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		83023D312925FC73004F8250 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		83023D3829268DA8004F8250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83023D402926920B004F8250 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		83023D42292699B4004F8250 /* GoogleAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthModel.swift; sourceTree = "<group>"; };
+		83023D5029277DC9004F8250 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		83023D5229277E55004F8250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		83023D57292780ED004F8250 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		83023D59292792C9004F8250 /* Tangerine-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tangerine-Bold.ttf"; sourceTree = "<group>"; };
+		83023D5B292795DF004F8250 /* GreatVibes-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GreatVibes-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +79,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83023D4B29277C91004F8250 /* FirebaseFirestore in Frameworks */,
+				83023D3529261889004F8250 /* GoogleSignIn in Frameworks */,
+				83023D4D29277C91004F8250 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				83023D3729261889004F8250 /* GoogleSignInSwift in Frameworks */,
+				83023D4F29277C91004F8250 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,9 +127,15 @@
 		83023CF92925EC03004F8250 /* Finity */ = {
 			isa = PBXGroup;
 			children = (
-				83023CFA2925EC03004F8250 /* FinityApp.swift */,
-				83023CFC2925EC03004F8250 /* ContentView.swift */,
-				83023CFE2925EC04004F8250 /* Assets.xcassets */,
+				83023D5029277DC9004F8250 /* GoogleService-Info.plist */,
+				83023D3829268DA8004F8250 /* Info.plist */,
+				83023D56292780D9004F8250 /* Managers */,
+				83023D5529277F54004F8250 /* Entry */,
+				83023D5429277F30004F8250 /* Resources */,
+				83023D3F292691DB004F8250 /* Timeline */,
+				83023D302925FC50004F8250 /* Libraries */,
+				83023D2D2925F889004F8250 /* Registration */,
+				83023D242925F35B004F8250 /* LaunchScreen */,
 				83023D002925EC04004F8250 /* Preview Content */,
 			);
 			path = Finity;
@@ -127,6 +166,68 @@
 			path = FinityUITests;
 			sourceTree = "<group>";
 		};
+		83023D242925F35B004F8250 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				83023D252925F374004F8250 /* LaunchScreenStep.swift */,
+				83023D272925F39D004F8250 /* LaunchScreenStateManager.swift */,
+				83023D2B2925F4A6004F8250 /* LaunchScreenView.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		83023D2D2925F889004F8250 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				83023D2E2925F8BF004F8250 /* RegistrationView.swift */,
+				83023D42292699B4004F8250 /* GoogleAuthModel.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		83023D302925FC50004F8250 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				83023D312925FC73004F8250 /* Color.swift */,
+				83023D59292792C9004F8250 /* Tangerine-Bold.ttf */,
+				83023D5B292795DF004F8250 /* GreatVibes-Regular.ttf */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		83023D3F292691DB004F8250 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				83023D402926920B004F8250 /* TimelineView.swift */,
+			);
+			path = Timeline;
+			sourceTree = "<group>";
+		};
+		83023D5429277F30004F8250 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				83023CFE2925EC04004F8250 /* Assets.xcassets */,
+				83023D5229277E55004F8250 /* AppDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		83023D5529277F54004F8250 /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				83023CFA2925EC03004F8250 /* FinityApp.swift */,
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
+		83023D56292780D9004F8250 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				83023D57292780ED004F8250 /* FirestoreManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +244,13 @@
 			dependencies = (
 			);
 			name = Finity;
+			packageProductDependencies = (
+				83023D3429261889004F8250 /* GoogleSignIn */,
+				83023D3629261889004F8250 /* GoogleSignInSwift */,
+				83023D4A29277C91004F8250 /* FirebaseFirestore */,
+				83023D4C29277C91004F8250 /* FirebaseFirestoreCombine-Community */,
+				83023D4E29277C91004F8250 /* FirebaseFirestoreSwift */,
+			);
 			productName = Finity;
 			productReference = 83023CF72925EC03004F8250 /* Finity.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +323,10 @@
 				Base,
 			);
 			mainGroup = 83023CEE2925EC03004F8250;
+			packageReferences = (
+				83023D3329261889004F8250 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				83023D4929277C91004F8250 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 83023CF82925EC03004F8250 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,7 +344,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				83023D022925EC04004F8250 /* Preview Assets.xcassets in Resources */,
+				83023D5A292792C9004F8250 /* Tangerine-Bold.ttf in Resources */,
 				83023CFF2925EC04004F8250 /* Assets.xcassets in Resources */,
+				83023D5C292795DF004F8250 /* GreatVibes-Regular.ttf in Resources */,
+				83023D5129277DC9004F8250 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +372,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83023CFD2925EC03004F8250 /* ContentView.swift in Sources */,
+				83023D2C2925F4A6004F8250 /* LaunchScreenView.swift in Sources */,
+				83023D58292780ED004F8250 /* FirestoreManager.swift in Sources */,
+				83023D282925F39D004F8250 /* LaunchScreenStateManager.swift in Sources */,
+				83023D262925F374004F8250 /* LaunchScreenStep.swift in Sources */,
+				83023D2F2925F8BF004F8250 /* RegistrationView.swift in Sources */,
+				83023D43292699B4004F8250 /* GoogleAuthModel.swift in Sources */,
 				83023CFB2925EC03004F8250 /* FinityApp.swift in Sources */,
+				83023D322925FC73004F8250 /* Color.swift in Sources */,
+				83023D5329277E55004F8250 /* AppDelegate.swift in Sources */,
+				83023D412926920B004F8250 /* TimelineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +543,7 @@
 				DEVELOPMENT_TEAM = 7DF23RMRWS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Finity/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +573,7 @@
 				DEVELOPMENT_TEAM = 7DF23RMRWS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Finity/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -583,6 +708,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		83023D3329261889004F8250 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		83023D4929277C91004F8250 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		83023D3429261889004F8250 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83023D3329261889004F8250 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		83023D3629261889004F8250 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83023D3329261889004F8250 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		83023D4A29277C91004F8250 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83023D4929277C91004F8250 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		83023D4C29277C91004F8250 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83023D4929277C91004F8250 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		83023D4E29277C91004F8250 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83023D4929277C91004F8250 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83023CEF2925EC03004F8250 /* Project object */;
 }

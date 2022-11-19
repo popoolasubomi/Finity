@@ -29,6 +29,13 @@ class GoogleAuthModel: ObservableObject {
         }
     }
     
+    func getCurrentUser() -> User? {
+        if GIDSignIn.sharedInstance.currentUser == nil {
+            return nil
+        }
+        return User(firstName: givenName, lastName: lastName, emailAddress: emailAdress, profilePictureURL: profilePicUrl)
+    }
+    
     func restoreSignIn(){
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
             if let error = error {
@@ -40,7 +47,7 @@ class GoogleAuthModel: ObservableObject {
         
     func signIn(handler: @escaping(_ success: Bool) -> Void){
         guard let presentingViewController = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController else {return}
-        let signInConfig = GIDConfiguration.init(clientID: "155653538444-2fohqojeqv81kncskuvg7kee2rfvi5no.apps.googleusercontent.com")
+        let signInConfig = GIDConfiguration.init(clientID: Security.GOOGLE_API_KEY.rawValue)
         
         GIDSignIn.sharedInstance.signIn(
             with: signInConfig,

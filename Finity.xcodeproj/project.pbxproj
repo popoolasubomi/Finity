@@ -28,8 +28,17 @@
 		83023D5129277DC9004F8250 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83023D5029277DC9004F8250 /* GoogleService-Info.plist */; };
 		83023D5329277E55004F8250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D5229277E55004F8250 /* AppDelegate.swift */; };
 		83023D58292780ED004F8250 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D57292780ED004F8250 /* FirestoreManager.swift */; };
-		83023D5A292792C9004F8250 /* Tangerine-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83023D59292792C9004F8250 /* Tangerine-Bold.ttf */; };
-		83023D5C292795DF004F8250 /* GreatVibes-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83023D5B292795DF004F8250 /* GreatVibes-Regular.ttf */; };
+		83023D5E2928B3AC004F8250 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D5D2928B3AC004F8250 /* Security.swift */; };
+		83023D602928B5B4004F8250 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D5F2928B5B4004F8250 /* Asset.swift */; };
+		83023D622928BAC2004F8250 /* TimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D612928BAC2004F8250 /* TimelineModel.swift */; };
+		83023D642928BAEA004F8250 /* TimelineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D632928BAEA004F8250 /* TimelineData.swift */; };
+		83023D672928BCC1004F8250 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D662928BCC1004F8250 /* User.swift */; };
+		83023D692928BD76004F8250 /* TimelineSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D682928BD76004F8250 /* TimelineSection.swift */; };
+		83023D6B2928BE78004F8250 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D6A2928BE78004F8250 /* Post.swift */; };
+		83023D6D2928C861004F8250 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D6C2928C861004F8250 /* UsersView.swift */; };
+		83023D712928D57D004F8250 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D702928D57D004F8250 /* ScreenSize.swift */; };
+		83023D732928E0F8004F8250 /* PicturePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D722928E0F8004F8250 /* PicturePostView.swift */; };
+		83023D752928E107004F8250 /* CaptionPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D742928E107004F8250 /* CaptionPostView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +79,17 @@
 		83023D5029277DC9004F8250 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83023D5229277E55004F8250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83023D57292780ED004F8250 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
-		83023D59292792C9004F8250 /* Tangerine-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tangerine-Bold.ttf"; sourceTree = "<group>"; };
-		83023D5B292795DF004F8250 /* GreatVibes-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GreatVibes-Regular.ttf"; sourceTree = "<group>"; };
+		83023D5D2928B3AC004F8250 /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
+		83023D5F2928B5B4004F8250 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		83023D612928BAC2004F8250 /* TimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineModel.swift; sourceTree = "<group>"; };
+		83023D632928BAEA004F8250 /* TimelineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineData.swift; sourceTree = "<group>"; };
+		83023D662928BCC1004F8250 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		83023D682928BD76004F8250 /* TimelineSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineSection.swift; sourceTree = "<group>"; };
+		83023D6A2928BE78004F8250 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		83023D6C2928C861004F8250 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		83023D702928D57D004F8250 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		83023D722928E0F8004F8250 /* PicturePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturePostView.swift; sourceTree = "<group>"; };
+		83023D742928E107004F8250 /* CaptionPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionPostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +145,7 @@
 		83023CF92925EC03004F8250 /* Finity */ = {
 			isa = PBXGroup;
 			children = (
+				83023D652928BCAB004F8250 /* Frameworks */,
 				83023D5029277DC9004F8250 /* GoogleService-Info.plist */,
 				83023D3829268DA8004F8250 /* Info.plist */,
 				83023D56292780D9004F8250 /* Managers */,
@@ -189,8 +208,9 @@
 			isa = PBXGroup;
 			children = (
 				83023D312925FC73004F8250 /* Color.swift */,
-				83023D59292792C9004F8250 /* Tangerine-Bold.ttf */,
-				83023D5B292795DF004F8250 /* GreatVibes-Regular.ttf */,
+				83023D5D2928B3AC004F8250 /* Security.swift */,
+				83023D5F2928B5B4004F8250 /* Asset.swift */,
+				83023D702928D57D004F8250 /* ScreenSize.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -199,6 +219,12 @@
 			isa = PBXGroup;
 			children = (
 				83023D402926920B004F8250 /* TimelineView.swift */,
+				83023D612928BAC2004F8250 /* TimelineModel.swift */,
+				83023D632928BAEA004F8250 /* TimelineData.swift */,
+				83023D682928BD76004F8250 /* TimelineSection.swift */,
+				83023D6C2928C861004F8250 /* UsersView.swift */,
+				83023D722928E0F8004F8250 /* PicturePostView.swift */,
+				83023D742928E107004F8250 /* CaptionPostView.swift */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -226,6 +252,15 @@
 				83023D57292780ED004F8250 /* FirestoreManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		83023D652928BCAB004F8250 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83023D662928BCC1004F8250 /* User.swift */,
+				83023D6A2928BE78004F8250 /* Post.swift */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,9 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83023D022925EC04004F8250 /* Preview Assets.xcassets in Resources */,
-				83023D5A292792C9004F8250 /* Tangerine-Bold.ttf in Resources */,
 				83023CFF2925EC04004F8250 /* Assets.xcassets in Resources */,
-				83023D5C292795DF004F8250 /* GreatVibes-Regular.ttf in Resources */,
 				83023D5129277DC9004F8250 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,12 +406,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				83023D2C2925F4A6004F8250 /* LaunchScreenView.swift in Sources */,
+				83023D752928E107004F8250 /* CaptionPostView.swift in Sources */,
 				83023D58292780ED004F8250 /* FirestoreManager.swift in Sources */,
+				83023D622928BAC2004F8250 /* TimelineModel.swift in Sources */,
 				83023D282925F39D004F8250 /* LaunchScreenStateManager.swift in Sources */,
+				83023D6B2928BE78004F8250 /* Post.swift in Sources */,
+				83023D6D2928C861004F8250 /* UsersView.swift in Sources */,
 				83023D262925F374004F8250 /* LaunchScreenStep.swift in Sources */,
 				83023D2F2925F8BF004F8250 /* RegistrationView.swift in Sources */,
 				83023D43292699B4004F8250 /* GoogleAuthModel.swift in Sources */,
+				83023D732928E0F8004F8250 /* PicturePostView.swift in Sources */,
+				83023D712928D57D004F8250 /* ScreenSize.swift in Sources */,
+				83023D602928B5B4004F8250 /* Asset.swift in Sources */,
+				83023D672928BCC1004F8250 /* User.swift in Sources */,
+				83023D642928BAEA004F8250 /* TimelineData.swift in Sources */,
 				83023CFB2925EC03004F8250 /* FinityApp.swift in Sources */,
+				83023D5E2928B3AC004F8250 /* Security.swift in Sources */,
+				83023D692928BD76004F8250 /* TimelineSection.swift in Sources */,
 				83023D322925FC73004F8250 /* Color.swift in Sources */,
 				83023D5329277E55004F8250 /* AppDelegate.swift in Sources */,
 				83023D412926920B004F8250 /* TimelineView.swift in Sources */,

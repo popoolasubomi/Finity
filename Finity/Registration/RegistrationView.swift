@@ -19,7 +19,7 @@ struct RegistrationView: View {
     
     @ViewBuilder
     private var image: some View {
-        Image("AppLogo")
+        Image(Asset.APP_LOGO.rawValue)
             .resizable()
             .scaledToFit()
             .frame(width: 120, height: 120)
@@ -41,7 +41,7 @@ struct RegistrationView: View {
                 }
             }
         }) {
-            Image("RegisterButton")
+            Image(Asset.SIGN_IN_BUTTON.rawValue)
             
         }
         .padding(.bottom, 30)

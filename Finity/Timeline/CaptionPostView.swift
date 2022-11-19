@@ -10,9 +10,11 @@ import SwiftUI
 struct CaptionPostView: View {
     
     private var post: Post
+    private var user: User
     
-    init(post: Post) {
+    init(post: Post, user: User) {
         self.post = post
+        self.user = user
     }
     
     var body: some View {
@@ -23,6 +25,9 @@ struct CaptionPostView: View {
 struct CaptionPostView_Previews: PreviewProvider {
     static var previews: some View {
         let timelineModel = TimelineModel()
-        CaptionPostView(post: timelineModel.fetchFakeCaptionPost())
+        CaptionPostView(
+            post: timelineModel.fetchFakeCaptionPost(),
+            user: timelineModel.fetchFakeUser()
+        )
     }
 }

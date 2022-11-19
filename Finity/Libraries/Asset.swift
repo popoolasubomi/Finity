@@ -14,8 +14,10 @@ enum Asset: String {
     case GREEN_FLAG = "green-flag"
     case GREY_FLAG = "grey-flag"
     case HOME_ICON = "home-icon"
+    case LIKE_HEART = "like-heart"
     case POST_ICON = "post-icon"
     case PROFILE_ICON = "profile-icon"
     case RED_FLAG = "red-flag"
     case SIGN_IN_BUTTON = "sign-in-button"
+    case UNLIKE_HEART = "unlike-heart"
 }

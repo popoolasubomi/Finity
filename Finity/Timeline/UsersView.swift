@@ -22,7 +22,7 @@ struct UsersView: View {
                     VStack {
                         AsyncImage(url: URL(string: user.profilePictureURL))
                             .scaledToFit()
-                            .frame(width: 80, height: 80)
+                            .frame(width: 60, height: 60)
                             .clipShape(Circle())
                             .shadow(radius: 2)
                             .overlay(Circle().stroke(Color.blue, lineWidth: 2))

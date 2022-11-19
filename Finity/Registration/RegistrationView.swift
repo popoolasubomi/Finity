@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftUISegues
 import GoogleSignInSwift
 
 struct RegistrationView: View {

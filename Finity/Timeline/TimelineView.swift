@@ -55,10 +55,21 @@ struct TimelineView: View {
                             switch timelineData.section {
                             case .users:
                                 UsersView(users: timelineData.users!)
+                                    .padding(.bottom)
                             case .picturePost:
-                                PicturePostView(post: timelineData.post!)
+                                let post = timelineData.post!
+                                PicturePostView(
+                                    post: post,
+                                    user: timelineModel.fetchUser(userId: post.userId)
+                                )
+                                    .listRowSeparator(.hidden)
                             case .captionPost:
-                                CaptionPostView(post: timelineData.post!)
+                                let post = timelineData.post!
+                                CaptionPostView(
+                                    post: post,
+                                    user: timelineModel.fetchUser(userId: post.userId)
+                                )
+                                    .listRowSeparator(.hidden)
                             }
                         }
                     }

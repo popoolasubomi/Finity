@@ -12,11 +12,14 @@ class TimelineModel {
     public var timelineArray = [TimelineData]()
     public var isFetching: Bool = true
     
+    private var userStore = [String:User]()
+    
     private func fetchUsers(handler: @escaping(_ users: [User]) -> Void) {
         var users = [User]()
         for _ in 0..<10 {
             let user = User(firstName: "subomi", lastName: "popoola", emailAddress: "popo***@***.com", profilePictureURL: "https://picsum.photos/200/300")
             users.append(user)
+            userStore[user.emailAddress] = user
         }
         handler(users)
     }
@@ -31,6 +34,10 @@ class TimelineModel {
             }
         }
         handler(posts)
+    }
+    
+    public func fetchUser(userId: String) -> User  {
+        return userStore[userId]!
     }
     
     public func fetchTimeline() {
@@ -65,7 +72,7 @@ class TimelineModel {
     public func fetchFakePicturePost() -> Post {
         let postId = "FAKE_POST_ID"
         let userId = "popo***@***.com"
-        let image = "https://picsum.photos/200/300"
+        let image = "https://picsum.photos/300/300"
         let caption = "Over 300 jungles gone from pollution"
         let flag = Int.random(in: 0..<2)
         return Post(
@@ -88,5 +95,9 @@ class TimelineModel {
             caption: caption,
             flag: flag
         )
+    }
+    
+    public func fetchFakeUser() -> User {
+        return User(firstName: "subomi", lastName: "popoola", emailAddress: "popo***@***.com", profilePictureURL: "https://picsum.photos/200/300")
     }
 }

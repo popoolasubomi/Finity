@@ -3,10 +3,10 @@ import GoogleSignIn
 
 class GoogleAuthModel: ObservableObject {
     
-    @Published var givenName: String = "NO_NAME"
-    @Published var profilePicUrl: String = "NO_URL"
-    @Published var emailAdress: String = "NO_EMAIL"
-    @Published var lastName: String = "NO_NAME"
+    @Published var givenName: String = "FIRST_NAME"
+    @Published var profilePicUrl: String = "PICTURE_URL"
+    @Published var emailAdress: String = "EMAIL_ADDRESS"
+    @Published var lastName: String = "LAST_NAME"
     @Published var isLoggedIn: Bool = false
     @Published var errorMessage: String = "NO_ERROR"
     
@@ -15,24 +15,22 @@ class GoogleAuthModel: ObservableObject {
             let user = GIDSignIn.sharedInstance.currentUser
             guard let user = user else { return }
             let profileUrl = user.profile!.imageURL(withDimension: 100)!.absoluteString
-            self.givenName = user.profile?.givenName ?? "NO_NAME"
-            self.lastName = user.profile?.familyName ?? "NO_NAME"
+            self.givenName = user.profile?.givenName ?? "FIRST_NAME"
+            self.lastName = user.profile?.familyName ?? "LAST_NAME"
             self.profilePicUrl = profileUrl
-            self.emailAdress = user.profile?.email ?? "NO_EMAIL"
+            self.emailAdress = user.profile?.email ?? "EMAIL_ADDRESS"
             self.isLoggedIn = true
         } else {
-            givenName = "NO_NAME"
-            lastName = "NO_NAME"
-            profilePicUrl = "NO_URL"
-            emailAdress = "NO_EMAIL"
+            givenName = "FIRST_NAME"
+            lastName = "LAST_NAME"
+            profilePicUrl = "PICTURE_URL"
+            emailAdress = "EMAIL_ADDRESS"
             isLoggedIn = false
         }
     }
     
-    func getCurrentUser() -> User? {
-        if GIDSignIn.sharedInstance.currentUser == nil {
-            return nil
-        }
+    func getCurrentUser() -> User {
+        checkStatus()
         return User(firstName: givenName, lastName: lastName, emailAddress: emailAdress, profilePictureURL: profilePicUrl)
     }
     

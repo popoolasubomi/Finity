@@ -74,26 +74,28 @@ class TimelineModel {
         let userId = "popo***@***.com"
         let image = "https://picsum.photos/300/300"
         let caption = "Over 300 jungles gone from pollution"
-        let flag = Int.random(in: 0..<2)
+        let flag = Int.random(in: -1..<2)
         return Post(
             postId: postId,
             userId: userId,
             caption: caption,
             flag: flag,
-            image: image
+            image: image,
+            comments: [["popo***@***.com", "Such a shame"], ["popo***@***.com", "Something seems off about this comment, the cheker flags its authencity"]]
         )
     }
     
     public func fetchFakeCaptionPost() -> Post {
         let postId = "FAKE_POST_ID"
         let userId = "popo***@***.com"
-        let caption = "Over 300 jungles gone from pollution"
+        let caption = "We have lost a lot of wildlife due to the greed of others"
         let flag = Int.random(in: 0..<2)
         return Post(
             postId: postId,
             userId: userId,
             caption: caption,
-            flag: flag
+            flag: flag,
+            comments: [["popo***@***.com", "Such a shame"], ["popo***@***.com", "Something seems off about this comment, the cheker flags its authencity"]]
         )
     }
     

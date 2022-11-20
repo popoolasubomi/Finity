@@ -19,7 +19,20 @@ struct FinityApp: App {
         WindowGroup {
             ZStack {
                 if googleAuthModel.isLoggedIn {
-                    TimelineView()
+                    TabView {
+                        TimelineView()
+                            .tabItem {
+                                Image(Asset.HOME_ICON.rawValue)
+                            }
+                        EventsView()
+                            .tabItem {
+                                Image(Asset.EVENT_ICON.rawValue)
+                            }
+                        ProfileView()
+                            .tabItem {
+                                Image(Asset.PROFILE_ICON.rawValue)
+                            }
+                    }
                 } else {
                     RegistrationView()
                 }

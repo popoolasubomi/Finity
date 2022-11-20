@@ -63,6 +63,7 @@ struct TimelineView: View {
                                     user: timelineModel.fetchUser(userId: post.userId)
                                 )
                                     .listRowSeparator(.hidden)
+                                    .frame(height: 350)
                             case .captionPost:
                                 let post = timelineData.post!
                                 CaptionPostView(
@@ -70,10 +71,10 @@ struct TimelineView: View {
                                     user: timelineModel.fetchUser(userId: post.userId)
                                 )
                                     .listRowSeparator(.hidden)
+                                    .frame(height: 150)
                             }
                         }
                     }
-                    .frame(width: .infinity)
                     .scrollContentBackground(.hidden)
                     .listStyle(GroupedListStyle())
                     .navigationBarItems(
@@ -83,7 +84,6 @@ struct TimelineView: View {
                 }
             }
         }
-        .toolbarBackground(Color.red, for: .navigationBar)
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import XNavigation
 
 @main
 struct FinityApp: App {
@@ -17,32 +18,37 @@ struct FinityApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ZStack {
-                if googleAuthModel.isLoggedIn {
-                    TabView {
-                        TimelineView()
-                            .tabItem {
-                                Image(Asset.HOME_ICON.rawValue)
-                            }
-                        EventsView()
-                            .tabItem {
-                                Image(Asset.EVENT_ICON.rawValue)
-                            }
-                        ProfileView()
-                            .tabItem {
-                                Image(Asset.PROFILE_ICON.rawValue)
-                            }
+            WindowReader { window in
+                ZStack {
+                    if googleAuthModel.isLoggedIn {
+                        TabView {
+                            TimelineView()
+                                .environmentObject(Navigation(window: window!))
+                                .tabItem {
+                                    Image(Asset.HOME_ICON.rawValue)
+                                }
+                            EventsView()
+                                .tabItem {
+                                    Image(Asset.EVENT_ICON.rawValue)
+                                }
+                            ProfileView()
+                                .environmentObject(Navigation(window: window!))
+                                .tabItem {
+                                    Image(Asset.PROFILE_ICON.rawValue)
+                                }
+                        }
+                    } else {
+                        RegistrationView()
+                            .environmentObject(launchScreenState)
+                            .environmentObject(googleAuthModel)
                     }
-                } else {
-                    RegistrationView()
-                }
-    
-                if launchScreenState.state != .finished {
-                    LaunchScreenView()
+        
+                    if launchScreenState.state != .finished {
+                        LaunchScreenView()
+                            .environmentObject(launchScreenState)
+                    }
                 }
             }
-            .environmentObject(launchScreenState)
-            .environmentObject(googleAuthModel)
         }
     }
 }

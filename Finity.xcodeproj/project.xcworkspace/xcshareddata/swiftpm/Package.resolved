@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "f512df48300140994b1ea56a2ff024a4734cef2b",
+        "version" : "5.6.3"
+      }
+    },
+    {
       "identity" : "appauth-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/openid/AppAuth-iOS.git",
@@ -133,6 +142,15 @@
       "state" : {
         "revision" : "ab3a58b7209a17d781c0d1dbb3e1ff3da306bae8",
         "version" : "1.20.3"
+      }
+    },
+    {
+      "identity" : "xnavigation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DoubleSymmetry/XNavigation",
+      "state" : {
+        "revision" : "921d0a18b9982cb33499229c4bba381076a30ed5",
+        "version" : "0.1.1"
       }
     }
   ],

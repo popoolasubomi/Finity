@@ -7,33 +7,26 @@
 
 import UIKit
 
-class TimelineModel {
+class TimelineModel: ObservableObject {
     
     public var timelineArray = [TimelineData]()
-    public var isFetching: Bool = true
-    
+    @Published var isFetching: Bool = true
+    private let dbManager = FirestoreManager()
     private var userStore = [String:User]()
     
     private func fetchUsers(handler: @escaping(_ users: [User]) -> Void) {
-        var users = [User]()
-        for _ in 0..<10 {
-            let user = User(firstName: "subomi", lastName: "popoola", emailAddress: "popo***@***.com", profilePictureURL: "https://picsum.photos/200/300")
-            users.append(user)
-            userStore[user.emailAddress] = user
+        dbManager.fetchAllUsers { users in
+            users.forEach { user in
+                self.userStore[user.emailAddress] = user
+            }
+            handler(users)
         }
-        handler(users)
     }
     
     private func fetchPosts(handler: @escaping(_ posts: [Post]) -> Void) {
-        var posts = [Post]()
-        for index in 0..<10 {
-            if index % 2 == 0 {
-                posts.append(fetchFakePicturePost())
-            } else {
-                posts.append(fetchFakeCaptionPost())
-            }
+        dbManager.fetchAllPosts { posts in
+            handler(posts)
         }
-        handler(posts)
     }
     
     public func fetchUser(userId: String) -> User  {
@@ -81,7 +74,7 @@ class TimelineModel {
             caption: caption,
             flag: flag,
             image: image,
-            comments: [["popo***@***.com", "Such a shame"], ["popo***@***.com", "Something seems off about this comment, the cheker flags its authencity"]]
+            comments: [["userId":"popo***@***.com", "comment":"Such a shame"], ["userId":"popo***@***.com", "comment":"Something seems off about this comment, the cheker flags its authencity"]]
         )
     }
     
@@ -95,7 +88,7 @@ class TimelineModel {
             userId: userId,
             caption: caption,
             flag: flag,
-            comments: [["popo***@***.com", "Such a shame"], ["popo***@***.com", "Something seems off about this comment, the cheker flags its authencity"]]
+            comments: [["userId":"popo***@***.com", "comment":"Such a shame"], ["userId":"popo***@***.com", "comment":"Something seems off about this comment, the cheker flags its authencity"]]
         )
     }
     

@@ -7,27 +7,22 @@
 
 import GoogleSignIn
 
-class ProfileModel {
+class ProfileModel: ObservableObject {
     
     public var user: User
-    public var isFetching: Bool = true
+    @Published var isFetching: Bool = true
     public var timelineArray = [TimelineData]()
     private let googleAuthModel = GoogleAuthModel()
+    private let dbManager = FirestoreManager()
     
     init() {
         self.user = googleAuthModel.getCurrentUser()
     }
     
     private func fetchPosts(handler: @escaping(_ posts: [Post]) -> Void) {
-        var posts = [Post]()
-        for index in 0..<10 {
-            if index % 2 == 0 {
-                posts.append(fetchFakePicturePost())
-            } else {
-                posts.append(fetchFakeCaptionPost())
-            }
+        dbManager.fetchPostsFrom(userId: user.emailAddress) { posts in
+            handler(posts)
         }
-        handler(posts)
     }
     
     public func fetchTimeline() {

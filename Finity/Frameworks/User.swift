@@ -13,11 +13,13 @@ class User: Identifiable {
     public var lastName: String
     public var emailAddress: String
     public var profilePictureURL: String
+    public var isCurrentUser: Bool?
     
-    init(firstName: String, lastName: String, emailAddress: String, profilePictureURL: String) {
+    init(firstName: String, lastName: String, emailAddress: String, profilePictureURL: String, isCurrentUser: Bool? = nil) {
         self.firstName = firstName
         self.lastName = lastName
         self.emailAddress = emailAddress
         self.profilePictureURL = profilePictureURL
+        self.isCurrentUser = isCurrentUser
     }
 }

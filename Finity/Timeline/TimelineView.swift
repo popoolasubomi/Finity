@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import XNavigation
 
 struct TimelineView: View {
     
+    @EnvironmentObject var navigation: Navigation
     private let firestoreManager = FirestoreManager()
-    private let timelineModel = TimelineModel()
+    @ObservedObject var timelineModel = TimelineModel()
     
     init() {
         timelineModel.fetchTimeline()
@@ -27,10 +29,10 @@ struct TimelineView: View {
     @ViewBuilder
     private var rightNavBar: some View {
         HStack {
-            Button(action: {}) {
+            NavigationLink(destination: PostCreationView()) {
                 Image(Asset.POST_ICON.rawValue)
             }
-            Button(action: {}) {
+            NavigationLink(destination: ChatsView(entry: .chats, event: EventData(title: "Chats", requestParam: "NO_PARAM"))) {
                 Image(Asset.CHAT_ICON.rawValue)
             }
         }
@@ -62,6 +64,7 @@ struct TimelineView: View {
                                     post: post,
                                     user: timelineModel.fetchUser(userId: post.userId)
                                 )
+                                    .environmentObject(navigation)
                                     .listRowSeparator(.hidden)
                                     .frame(height: 350)
                             case .captionPost:
@@ -70,6 +73,7 @@ struct TimelineView: View {
                                     post: post,
                                     user: timelineModel.fetchUser(userId: post.userId)
                                 )
+                                    .environmentObject(navigation)
                                     .listRowSeparator(.hidden)
                                     .frame(height: 150)
                             }
@@ -90,5 +94,6 @@ struct TimelineView: View {
 struct TimelineView_Previews: PreviewProvider {
     static var previews: some View {
         TimelineView()
+            .environmentObject(Navigation(window: UIWindow()))
     }
 }

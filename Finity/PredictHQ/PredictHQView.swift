@@ -12,6 +12,7 @@ struct PredictHQView: View {
     private var post: Post
     private var commentsModel: CommentsModel
     private let predictHqModel = PredictHqModel()
+    private let googleModel = GoogleAuthModel()
     
     init(post: Post) {
         self.post = post
@@ -20,71 +21,67 @@ struct PredictHQView: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                if commentsModel.isFetching {
-                    ProgressView()
-                        .progressViewStyle(.circular)
-                } else {
-                    let postOwner = commentsModel.userStore[post.userId]
-                    Spacer()
-                    Divider()
-                    FullCommentView(user: postOwner!, comment: post.caption)
-                        .padding(.top)
-                    Divider()
-                    Spacer()
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 15.0)
-                            .fill(CustomColor.themeColor)
-                            .frame(width: ScreenSize.screenWidth * 0.85, height: ScreenSize.screenHeight * 0.30)
-                        Text(post.caption)
-                            .foregroundColor(.white)
+        VStack {
+            if predictHqModel.isFetching {
+                ProgressView()
+                    .progressViewStyle(.circular)
+            } else {
+                let postOwner = User(firstName: "subomi", lastName: "popoola", emailAddress: "popoolaogooluwasubomi@gmail.com", profilePictureURL: "https://lh3.googleusercontent.com/a/ALm5wu2C8x-GtoTS_MfI_kgmeOGOSeSpfv1pCz8FsSfq=s100")
+                Spacer()
+                Divider()
+                FullCommentView(user: postOwner, comment: post.caption)
+                    .padding(.top)
+                Divider()
+                Spacer()
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15.0)
+                        .fill(CustomColor.themeColor)
+                        .frame(width: ScreenSize.screenWidth * 0.85, height: ScreenSize.screenHeight * 0.30)
+                    Text(post.caption)
+                        .foregroundColor(.white)
+                        .font(Font.custom("HelveticaNeue-Bold", size: 18.5))
+                        .padding()
+                        .frame(width: ScreenSize.screenWidth * 0.85)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                Spacer()
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15.0)
+                        .fill(.yellow)
+                        .frame(width: ScreenSize.screenWidth * 0.85, height: ScreenSize.screenHeight * 0.30)
+                    if predictHqModel.isFetching {
+                        ProgressView()
+                            .progressViewStyle(.circular)
+                    } else {
+                        Text(predictHqModel.resonatingArgument)
+                            .foregroundColor(CustomColor.themeColor)
                             .font(Font.custom("HelveticaNeue-Bold", size: 18.5))
                             .padding()
                             .frame(width: ScreenSize.screenWidth * 0.85)
                             .fixedSize(horizontal: false, vertical: true)
                     }
-                    Spacer()
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 15.0)
-                            .fill(.yellow)
-                            .frame(width: ScreenSize.screenWidth * 0.85, height: ScreenSize.screenHeight * 0.30)
-                        if predictHqModel.isFetching {
-                            ProgressView()
-                                .progressViewStyle(.circular)
-                        } else {
-                            Text(predictHqModel.resonatingArgument)
-                                .foregroundColor(CustomColor.themeColor)
-                                .font(Font.custom("HelveticaNeue-Bold", size: 18.5))
-                                .padding()
-                                .frame(width: ScreenSize.screenWidth * 0.85)
-                                .fixedSize(horizontal: false, vertical: true)
-                        }
-                    }
-                    Spacer()
                 }
+                Spacer()
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    HStack {
-                        Spacer()
-                        Spacer()
-                        Text("PredictHQ")
-                            .font(Font.custom("HelveticaNeue-Bold", size: 25.0))
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                HStack {
+                    Text("PredictHQ")
+                        .foregroundColor(CustomColor.themeColor)
+                        .font(Font.custom("HelveticaNeue-Bold", size: 25.0))
+                        .padding([.top, .leading])
+                    switch post.flag {
+                    case -1:
+                        Image(Asset.RED_FLAG.rawValue)
                             .padding(.top)
-                        Spacer()
-                        switch post.flag {
-                        case -1:
-                            Image(Asset.RED_FLAG.rawValue)
-                                .padding(.top)
-                        case 1:
-                            Image(Asset.GREEN_FLAG.rawValue)
-                                .padding(.top)
-                        default:
-                            Image(Asset.GREY_FLAG.rawValue)
-                                .padding(.top)
-                        }
+                    case 1:
+                        Image(Asset.GREEN_FLAG.rawValue)
+                            .padding(.top)
+                    default:
+                        Image(Asset.GREY_FLAG.rawValue)
+                            .padding(.top)
                     }
                 }
             }

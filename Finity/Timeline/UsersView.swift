@@ -26,10 +26,18 @@ struct UsersView: View {
                             .clipShape(Circle())
                             .shadow(radius: 2)
                             .overlay(Circle().stroke(Color.blue, lineWidth: 2))
-                        Text(user.firstName)
-                            .foregroundColor(.black)
-                            .font(Font.custom("HelveticaNeue-Regular", size: 15))
+                        if user.isCurrentUser ?? false {
+                            Text("Me")
+                                .foregroundColor(.black)
+                                .font(Font.custom("HelveticaNeue-Regular", size: 12.5))
+                        } else {
+                            Text(user.firstName)
+                                .lineLimit(1)
+                                .foregroundColor(.black)
+                                .font(Font.custom("HelveticaNeue-Regular", size: 12.5))
+                        }
                     }
+                    .frame(width: 80)
                     .padding([.top, .leading, .bottom], 5)
                 }
             }

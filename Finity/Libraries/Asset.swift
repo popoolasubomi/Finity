@@ -9,6 +9,7 @@ enum Asset: String {
     case APP_ICON = "app-icon"
     case APP_LOGO = "app-logo"
     case CHAT_ICON = "chat-icon"
+    case COMPOSE_ICON = "compose-icon"
     case EVENT_ICON = "event-icon"
     case GOOGLE_ICON = "google-icon"
     case GREEN_FLAG = "green-flag"
@@ -20,5 +21,6 @@ enum Asset: String {
     case PROFILE_ICON = "profile-icon"
     case RED_FLAG = "red-flag"
     case SIGN_IN_BUTTON = "sign-in-button"
+    case SUBMIT_POST_ICON = "submit-post-icon"
     case UNLIKE_HEART = "unlike-heart"
 }

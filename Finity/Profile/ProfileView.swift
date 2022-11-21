@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import XNavigation
 
 struct ProfileView: View {
     
-    private let profileModel = ProfileModel()
+    @EnvironmentObject var navigation: Navigation
+    @ObservedObject var profileModel = ProfileModel()
     
     init() {
         profileModel.fetchTimeline()
@@ -56,33 +58,43 @@ struct ProfileView: View {
                             .foregroundColor(.white)
                             .font(Font.custom("HelveticaNeue-Bold", size: 15.0))
                     }
-                    List {
-                        ForEach(profileModel.timelineArray) { timelineData in
-                            switch timelineData.section {
-                            case .users:
-                                UsersView(users: timelineData.users!)
-                                    .padding(.bottom)
-                            case .picturePost:
-                                let post = timelineData.post!
-                                PicturePostView(
-                                    post: post,
-                                    user: user
-                                )
-                                    .listRowSeparator(.hidden)
-                                    .frame(height: 350)
-                            case .captionPost:
-                                let post = timelineData.post!
-                                CaptionPostView(
-                                    post: post,
-                                    user: user
-                                )
-                                    .listRowSeparator(.hidden)
-                                    .frame(height: 150)
+                    if profileModel.timelineArray.count == 0 {
+                        VStack{
+                            Spacer()
+                            Text("No Posts")
+                            Spacer()
+                        }
+                    } else {
+                        List {
+                            ForEach(profileModel.timelineArray) { timelineData in
+                                switch timelineData.section {
+                                case .users:
+                                    UsersView(users: timelineData.users!)
+                                        .padding(.bottom)
+                                case .picturePost:
+                                    let post = timelineData.post!
+                                    PicturePostView(
+                                        post: post,
+                                        user: user
+                                    )
+                                        .environmentObject(navigation)
+                                        .listRowSeparator(.hidden)
+                                        .frame(height: 350)
+                                case .captionPost:
+                                    let post = timelineData.post!
+                                    CaptionPostView(
+                                        post: post,
+                                        user: user
+                                    )
+                                        .environmentObject(navigation)
+                                        .listRowSeparator(.hidden)
+                                        .frame(height: 150)
+                                }
                             }
                         }
+                        .scrollContentBackground(.hidden)
+                        .listStyle(GroupedListStyle())
                     }
-                    .scrollContentBackground(.hidden)
-                    .listStyle(GroupedListStyle())
                 }
             }
             .navigationBarTitleDisplayMode(.inline)

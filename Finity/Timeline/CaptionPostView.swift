@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import XNavigation
 
 struct CaptionPostView: View {
     
     private var post: Post
     private var user: User
+    
+    @EnvironmentObject var navigation: Navigation
     
     init(post: Post, user: User) {
         self.post = post
@@ -43,6 +46,8 @@ struct CaptionPostView: View {
                         default:
                             Image(Asset.GREY_FLAG.rawValue)
                         }
+                    }.onTapGesture {
+                        navigation.pushView(PredictHQView(post: post))
                     }
                 }.padding([.leading, .trailing])
                 Divider()
@@ -60,11 +65,15 @@ struct CaptionPostView: View {
                     Button(action: {}) {
                         Image(Asset.UNLIKE_HEART.rawValue)
                     }
+                    .padding(.leading)
                     Button(action: {}) {
                         Image(Asset.CHAT_ICON.rawValue)
+                    }.onTapGesture {
+                        navigation.pushView(CommentsView(post: post))
                     }
+                    .padding(.leading, 5)
                     Spacer()
-                }.padding(.leading)
+                }
             }
             .frame(height: 300.0)
         }
@@ -78,5 +87,6 @@ struct CaptionPostView_Previews: PreviewProvider {
             post: timelineModel.fetchFakeCaptionPost(),
             user: timelineModel.fetchFakeUser()
         )
+        .environmentObject(Navigation(window: UIWindow()))
     }
 }

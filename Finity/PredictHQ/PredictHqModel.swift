@@ -6,15 +6,24 @@
 //
 
 import UIKit
+import Foundation
 
-class PredictHqModel {
+class PredictHqModel: ObservableObject {
     
-    public var isFetching: Bool = true
+    @Published var isFetching: Bool = true
     public var resonatingArgument: String = ""
+    
+    public func fetchPredictHQData(request_parameters: String, handler: @escaping(_ results: [[String:Any]]) -> Void) {
+        isFetching = true
+        PredictHQ_API().fetchData(request_param: request_parameters) { results in
+            handler(results)
+            self.isFetching = false
+        }
+    }
     
     public func fetchResonatingArgumentStored(postId: String) {
         isFetching = true
-        self.resonatingArgument = "Close to 100 jungles impacted by wastage damage"
+        self.resonatingArgument = "Heavy snow in New York coming soon"
         isFetching = false
     }
 }

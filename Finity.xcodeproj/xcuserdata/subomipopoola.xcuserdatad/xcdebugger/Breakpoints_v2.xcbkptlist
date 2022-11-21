@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "298FBC8F-72AF-4CEF-BDBA-76E529ADE40B"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3D488B96-1421-4E6A-A1BC-C424050B4D70"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finity/Timeline/TimelineModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "fetchUsers(handler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9F6046F9-A6A6-483A-AB4D-5D2DA04F789F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finity/Timeline/TimelineModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "fetchTimeline()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9F6046F9-A6A6-483A-AB4D-5D2DA04F789F - dd9c6e38767a05bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Finity.TimelineModel.fetchTimeline() -&gt; ()"
+                  moduleName = "Finity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subomipopoola/Documents/IOS/Finity/Finity/Timeline/TimelineModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "9F6046F9-A6A6-483A-AB4D-5D2DA04F789F - 1a2bc141ebbccab4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Finity.User&gt;) -&gt; () in Finity.TimelineModel.fetchTimeline() -&gt; ()"
+                  moduleName = "Finity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subomipopoola/Documents/IOS/Finity/Finity/Timeline/TimelineModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6936FDC6-A308-4320-BF99-D73655451D32"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finity/Timeline/TimelineModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "fetchTimeline()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "11EC3801-7950-4BE1-A5CF-5D1AFD41AA1B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finity/Timeline/TimelineModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "fetchUsers(handler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AF25B88F-E3B5-4B7D-8B66-85122B54F8D1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finity/Timeline/TimelineModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "fetchTimeline()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC16154A-A54C-4C02-8C29-6DE13C04508B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finity/Managers/FirestoreManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "createChatInfo(chatData:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CC16154A-A54C-4C02-8C29-6DE13C04508B - 61a897554c59fa4b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Finity.FirestoreManager.createChatInfo(chatData: Finity.ChatsData) -&gt; ()"
+                  moduleName = "Finity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subomipopoola/Documents/IOS/Finity/Finity/Managers/FirestoreManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "202"
+                  endingLineNumber = "202"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "CC16154A-A54C-4C02-8C29-6DE13C04508B - dee115d232bbbc58"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Finity.FirestoreManager.createChatInfo(chatData: Finity.ChatsData) -&gt; ()"
+                  moduleName = "Finity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subomipopoola/Documents/IOS/Finity/Finity/Managers/FirestoreManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50658344-37C0-40F3-9CF6-EE68D7AFF791"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finity/Managers/FirestoreManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "fetchMyChats(handler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "50658344-37C0-40F3-9CF6-EE68D7AFF791 - 720dd375773fcf9c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRQueryDocumentSnapshot) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Finity.FirestoreManager.fetchMyChats(handler: (Swift.Array&lt;Finity.ChatsData&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Finity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subomipopoola/Documents/IOS/Finity/Finity/Managers/FirestoreManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  uuid = "50658344-37C0-40F3-9CF6-EE68D7AFF791 - 720dd375773fcf9c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRQueryDocumentSnapshot) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Finity.FirestoreManager.fetchMyChats(handler: (Swift.Array&lt;Finity.ChatsData&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Finity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/subomipopoola/Documents/IOS/Finity/Finity/Managers/FirestoreManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "324">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "01885BC8-CE1F-4394-9A46-C1D12371330B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finity/Chats/ChatsModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "init(event:entry:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7818D52A-1CC3-4A44-9243-EB646D6572DC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Finity/Managers/FirestoreManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "fetchMyChats(handler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

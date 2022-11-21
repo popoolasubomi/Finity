@@ -50,6 +50,18 @@
 		83023D8E292A0BBF004F8250 /* FullCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D8D292A0BBF004F8250 /* FullCommentView.swift */; };
 		83023D90292A1D0B004F8250 /* PredictHqModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D8F292A1D0B004F8250 /* PredictHqModel.swift */; };
 		83023D93292A1FFA004F8250 /* PostCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D92292A1FFA004F8250 /* PostCreationView.swift */; };
+		83023D96292A25DA004F8250 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D95292A25DA004F8250 /* ChatsView.swift */; };
+		83023D9B292A4551004F8250 /* XNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 83023D9A292A4551004F8250 /* XNavigation */; };
+		83023D9D292ABF88004F8250 /* ChatsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D9C292ABF88004F8250 /* ChatsEntry.swift */; };
+		83023D9F292AC047004F8250 /* ChatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023D9E292AC047004F8250 /* ChatsModel.swift */; };
+		83023DA1292AC0BC004F8250 /* ChatsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023DA0292AC0BC004F8250 /* ChatsData.swift */; };
+		83023DA6292ACE18004F8250 /* MessagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023DA5292ACE18004F8250 /* MessagerView.swift */; };
+		83023DA8292AD0A9004F8250 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023DA7292AD0A9004F8250 /* MessageData.swift */; };
+		83023DAA292AD1D0004F8250 /* ContentMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023DA9292AD1D0004F8250 /* ContentMessageView.swift */; };
+		83023DAC292AD609004F8250 /* MessagingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023DAB292AD609004F8250 /* MessagingModel.swift */; };
+		83023DAE292AE004004F8250 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023DAD292AE004004F8250 /* MessageView.swift */; };
+		83023DB3292B0E25004F8250 /* PredictHQ_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023DB2292B0E25004F8250 /* PredictHQ_API.swift */; };
+		83023DBF292B6FEC004F8250 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 83023DBE292B6FEC004F8250 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +124,16 @@
 		83023D8D292A0BBF004F8250 /* FullCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCommentView.swift; sourceTree = "<group>"; };
 		83023D8F292A1D0B004F8250 /* PredictHqModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictHqModel.swift; sourceTree = "<group>"; };
 		83023D92292A1FFA004F8250 /* PostCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreationView.swift; sourceTree = "<group>"; };
+		83023D95292A25DA004F8250 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
+		83023D9C292ABF88004F8250 /* ChatsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsEntry.swift; sourceTree = "<group>"; };
+		83023D9E292AC047004F8250 /* ChatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsModel.swift; sourceTree = "<group>"; };
+		83023DA0292AC0BC004F8250 /* ChatsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsData.swift; sourceTree = "<group>"; };
+		83023DA5292ACE18004F8250 /* MessagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagerView.swift; sourceTree = "<group>"; };
+		83023DA7292AD0A9004F8250 /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
+		83023DA9292AD1D0004F8250 /* ContentMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMessageView.swift; sourceTree = "<group>"; };
+		83023DAB292AD609004F8250 /* MessagingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingModel.swift; sourceTree = "<group>"; };
+		83023DAD292AE004004F8250 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		83023DB2292B0E25004F8250 /* PredictHQ_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictHQ_API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +144,10 @@
 				83023D4B29277C91004F8250 /* FirebaseFirestore in Frameworks */,
 				83023D3529261889004F8250 /* GoogleSignIn in Frameworks */,
 				83023D4D29277C91004F8250 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				83023DBF292B6FEC004F8250 /* Alamofire in Frameworks */,
 				83023D3729261889004F8250 /* GoogleSignInSwift in Frameworks */,
 				83023D4F29277C91004F8250 /* FirebaseFirestoreSwift in Frameworks */,
+				83023D9B292A4551004F8250 /* XNavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +191,8 @@
 		83023CF92925EC03004F8250 /* Finity */ = {
 			isa = PBXGroup;
 			children = (
+				83023DA4292ACE06004F8250 /* Messages */,
+				83023D94292A25BD004F8250 /* Chats */,
 				83023D91292A1FE3004F8250 /* PostCreation */,
 				83023D8A292A0944004F8250 /* PredictHQ */,
 				83023D852929FAFF004F8250 /* Comments */,
@@ -324,6 +350,7 @@
 			children = (
 				83023D8B292A0979004F8250 /* PredictHQView.swift */,
 				83023D8F292A1D0B004F8250 /* PredictHqModel.swift */,
+				83023DB2292B0E25004F8250 /* PredictHQ_API.swift */,
 			);
 			path = PredictHQ;
 			sourceTree = "<group>";
@@ -334,6 +361,29 @@
 				83023D92292A1FFA004F8250 /* PostCreationView.swift */,
 			);
 			path = PostCreation;
+			sourceTree = "<group>";
+		};
+		83023D94292A25BD004F8250 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				83023D95292A25DA004F8250 /* ChatsView.swift */,
+				83023D9C292ABF88004F8250 /* ChatsEntry.swift */,
+				83023D9E292AC047004F8250 /* ChatsModel.swift */,
+				83023DA0292AC0BC004F8250 /* ChatsData.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		83023DA4292ACE06004F8250 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				83023DA5292ACE18004F8250 /* MessagerView.swift */,
+				83023DAD292AE004004F8250 /* MessageView.swift */,
+				83023DA7292AD0A9004F8250 /* MessageData.swift */,
+				83023DA9292AD1D0004F8250 /* ContentMessageView.swift */,
+				83023DAB292AD609004F8250 /* MessagingModel.swift */,
+			);
+			path = Messages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +408,8 @@
 				83023D4A29277C91004F8250 /* FirebaseFirestore */,
 				83023D4C29277C91004F8250 /* FirebaseFirestoreCombine-Community */,
 				83023D4E29277C91004F8250 /* FirebaseFirestoreSwift */,
+				83023D9A292A4551004F8250 /* XNavigation */,
+				83023DBE292B6FEC004F8250 /* Alamofire */,
 			);
 			productName = Finity;
 			productReference = 83023CF72925EC03004F8250 /* Finity.app */;
@@ -434,6 +486,8 @@
 			packageReferences = (
 				83023D3329261889004F8250 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				83023D4929277C91004F8250 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				83023D99292A4551004F8250 /* XCRemoteSwiftPackageReference "XNavigation" */,
+				83023DBD292B6FEC004F8250 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 83023CF82925EC03004F8250 /* Products */;
 			projectDirPath = "";
@@ -481,6 +535,7 @@
 				83023D2C2925F4A6004F8250 /* LaunchScreenView.swift in Sources */,
 				83023D90292A1D0B004F8250 /* PredictHqModel.swift in Sources */,
 				83023D752928E107004F8250 /* CaptionPostView.swift in Sources */,
+				83023DAE292AE004004F8250 /* MessageView.swift in Sources */,
 				83023D872929FB0A004F8250 /* CommentsView.swift in Sources */,
 				83023D58292780ED004F8250 /* FirestoreManager.swift in Sources */,
 				83023D622928BAC2004F8250 /* TimelineModel.swift in Sources */,
@@ -490,7 +545,9 @@
 				83023D6B2928BE78004F8250 /* Post.swift in Sources */,
 				83023D6D2928C861004F8250 /* UsersView.swift in Sources */,
 				83023D802929A581004F8250 /* EventData.swift in Sources */,
+				83023D96292A25DA004F8250 /* ChatsView.swift in Sources */,
 				83023D262925F374004F8250 /* LaunchScreenStep.swift in Sources */,
+				83023D9D292ABF88004F8250 /* ChatsEntry.swift in Sources */,
 				83023D2F2925F8BF004F8250 /* RegistrationView.swift in Sources */,
 				83023D7929299E15004F8250 /* EventsView.swift in Sources */,
 				83023D43292699B4004F8250 /* GoogleAuthModel.swift in Sources */,
@@ -499,16 +556,23 @@
 				83023D712928D57D004F8250 /* ScreenSize.swift in Sources */,
 				83023D602928B5B4004F8250 /* Asset.swift in Sources */,
 				83023D672928BCC1004F8250 /* User.swift in Sources */,
+				83023DA8292AD0A9004F8250 /* MessageData.swift in Sources */,
+				83023DA1292AC0BC004F8250 /* ChatsData.swift in Sources */,
 				83023D642928BAEA004F8250 /* TimelineData.swift in Sources */,
+				83023D9F292AC047004F8250 /* ChatsModel.swift in Sources */,
 				83023CFB2925EC03004F8250 /* FinityApp.swift in Sources */,
 				83023D822929A599004F8250 /* EventsModel.swift in Sources */,
 				83023D7C29299E5F004F8250 /* ProfileView.swift in Sources */,
+				83023DB3292B0E25004F8250 /* PredictHQ_API.swift in Sources */,
 				83023D5E2928B3AC004F8250 /* Security.swift in Sources */,
 				83023D8C292A0979004F8250 /* PredictHQView.swift in Sources */,
 				83023D692928BD76004F8250 /* TimelineSection.swift in Sources */,
 				83023D322925FC73004F8250 /* Color.swift in Sources */,
+				83023DA6292ACE18004F8250 /* MessagerView.swift in Sources */,
 				83023D5329277E55004F8250 /* AppDelegate.swift in Sources */,
+				83023DAA292AD1D0004F8250 /* ContentMessageView.swift in Sources */,
 				83023D412926920B004F8250 /* TimelineView.swift in Sources */,
+				83023DAC292AD609004F8250 /* MessagingModel.swift in Sources */,
 				83023D8E292A0BBF004F8250 /* FullCommentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -854,6 +918,22 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		83023D99292A4551004F8250 /* XCRemoteSwiftPackageReference "XNavigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DoubleSymmetry/XNavigation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
+		83023DBD292B6FEC004F8250 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -881,6 +961,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 83023D4929277C91004F8250 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		83023D9A292A4551004F8250 /* XNavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83023D99292A4551004F8250 /* XCRemoteSwiftPackageReference "XNavigation" */;
+			productName = XNavigation;
+		};
+		83023DBE292B6FEC004F8250 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83023DBD292B6FEC004F8250 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

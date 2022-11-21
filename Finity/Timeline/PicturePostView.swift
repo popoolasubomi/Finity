@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import XNavigation
 
 struct PicturePostView: View {
     
+    @EnvironmentObject var navigation: Navigation
     private var post: Post
     private var user: User
     
@@ -43,6 +45,8 @@ struct PicturePostView: View {
                         default:
                             Image(Asset.GREY_FLAG.rawValue)
                         }
+                    }.onTapGesture {
+                        navigation.pushView(PredictHQView(post: post))
                     }
                 }.padding([.leading, .trailing])
                 Spacer()
@@ -78,11 +82,15 @@ struct PicturePostView: View {
                     Button(action: {}) {
                         Image(Asset.UNLIKE_HEART.rawValue)
                     }
+                    .padding(.leading)
                     Button(action: {}) {
                         Image(Asset.CHAT_ICON.rawValue)
+                    }.onTapGesture {
+                        navigation.pushView(CommentsView(post: post))
                     }
+                    .padding(.leading, 5)
                     Spacer()
-                }.padding(.leading)
+                }
             }
             .frame(height: 300.0)
         }
@@ -96,5 +104,6 @@ struct PicturePostView_Previews: PreviewProvider {
             post: timelineModel.fetchFakePicturePost(),
             user: timelineModel.fetchFakeUser()
         )
+        .environmentObject(Navigation(window: UIWindow()))
     }
 }

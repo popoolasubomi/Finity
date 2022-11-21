@@ -14,11 +14,11 @@ class Post {
     public var image: String?
     public var caption: String
     public var likes: [String]
-    public var comments: [[String]]
+    public var comments: [[String:String]]
     public var flagId: String?
     public var flag: Int
     
-    init(postId: String, userId: String, caption: String, flag: Int, image: String? = nil, likes: [String] = [], comments: [[String]] = [], flagId: String? = "") {
+    init(postId: String, userId: String, caption: String, flag: Int, image: String? = nil, likes: [String] = [], comments: [[String:String]] = [], flagId: String? = "") {
         self.postId = postId
         self.userId = userId
         self.image = image

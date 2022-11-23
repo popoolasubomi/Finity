@@ -10,13 +10,8 @@ import FirebaseFirestore
 
 class FirestoreManager {
     
-    var database: Firestore
-    private var userStore = [String: User]()
+    private var database = Firestore.firestore()
     private var googleAuthModel = GoogleAuthModel()
-    
-    init() {
-        database = Firestore.firestore()
-    }
     
     private func verifyUserExists(
         emailAddress: String,
@@ -62,11 +57,21 @@ class FirestoreManager {
         }
     }
     
+    public func createPost(data: [String:Any],  handler: @escaping(_ success: Bool) -> Void) {
+        database.collection("posts").addDocument(data: data) { err in
+            if err == nil {
+                handler(true)
+            } else {
+                handler(false)
+            }
+        }
+    }
+    
     public func fetchAllUsers(handler: @escaping(_ users: [User]) -> Void) {
-        var users = [User]()
-        let currentUser = googleAuthModel.getCurrentUser()
         database.collection("users").getDocuments { documentSnaps, error in
             if error == nil {
+                var users = [User]()
+                let currentUser = self.googleAuthModel.getCurrentUser()
                 documentSnaps?.documents.forEach({ snapshot in
                     let data = snapshot.data()
                     let user = User(
@@ -83,8 +88,9 @@ class FirestoreManager {
                     }
                 })
                 handler(users)
+            } else {
+                handler([])
             }
-            handler([])
         }
     }
     
@@ -101,9 +107,9 @@ class FirestoreManager {
     }
     
     public func fetchAllPosts(handler: @escaping(_ posts: [Post]) -> Void) {
-        var posts = [Post]()
         database.collection("posts").getDocuments { documentSnaps, error in
             if error == nil {
+                var posts = [Post]()
                 documentSnaps?.documents.forEach({ snapshot in
                     let data = snapshot.data()
                     let post = Post(
@@ -118,8 +124,9 @@ class FirestoreManager {
                     posts.append(post)
                 })
                 handler(posts)
+            } else {
+                handler([])
             }
-            handler([])
         }
     }
     
@@ -149,65 +156,13 @@ class FirestoreManager {
                     }
                 })
                 handler(chats)
-            }
-            handler([])
-        }
-    }
-    
-    public func fetchMessagesFrom(chatId: String, handler: @escaping(_ messages: [MessageData]) -> Void) {
-        fetchAllUsers { users in
-            users.forEach { user in
-                self.userStore[user.emailAddress] = user
-            }
-            var messageArray = [MessageData]()
-            self.database.collection("chats").document(chatId).getDocument { snap, error in
-                if error == nil {
-                    let data = snap?.data()
-                    if let messages = data?["messages"] as? [[String:String]] {
-                        messages.forEach { message in
-                            let content = message["content"]!
-                            let userId = message["userId"]!
-                            let user = self.userStore[userId]!
-                            messageArray.append(MessageData(content: content, user: user))
-                        }
-                    }
-                    handler([])
-                }
+            } else {
                 handler([])
             }
         }
     }
     
-    public func fetchTheseChatUsersIDs(chatId: String, handler: @escaping(_ users: [String]) -> Void) {
-        database.collection("chats").document(chatId).getDocument { snap, error in
-            if error == nil {
-                let data = snap?.data()
-                if let users = data?["users"] as? [String] {
-                   handler(users)
-                }
-                handler([])
-            }
-            handler([])
-        }
-    }
-    
-    public func addUserToChat(chatId: String, userId: String, userIds: [String]) {
-        var mUserIds = userIds
-        mUserIds.append(userId)
-        database.collection("chats").document(chatId).setData(["users": mUserIds], merge: true)
-    }
-    
-    public func addMessageToChat(chatId: String, userId: String, content: String, messages: [MessageData]) {
-        var mmessages = [[String:String]]()
-        messages.forEach { message in
-            mmessages.append(["content": message.content, "userId": message.user.emailAddress])
-        }
-        mmessages.append(["content": content, "userId": userId])
-        mmessages = mmessages.reversed()
-        database.collection("chats").document(chatId).setData(["messages": [["content": content, "userId": userId]]], merge: true)
-    }
-    
-    public func createChatInfo(chatData: ChatsData) {
+    public func createChatInfo(chatData: ChatsData,  handler: @escaping(_ success: Bool) -> Void) {
         verifyChatExists(chatId: chatData.id) { chatExists in
             if !chatExists {
                 self.database.collection("chats").document(chatData.id).setData([
@@ -215,7 +170,73 @@ class FirestoreManager {
                     "labels": chatData.labels,
                     "location": chatData.location,
                     "rank": chatData.rank
-                ], merge: true)
+                ], merge: true) { err in
+                    if err == nil {
+                        handler(true)
+                    } else {
+                        handler(false)
+                    }
+                }
+            } else {
+                handler(true)
+            }
+        }
+    }
+    
+    public func fetchMessagesFrom(chatId: String, handler: @escaping(_ messages: [MessageData], _ currentUsers: [String]) -> Void) {
+        database.collection("chats").document(chatId)
+            .addSnapshotListener { documentSnapshot, error in
+                if let documentSnapshot = documentSnapshot {
+                    let data = documentSnapshot.data()!
+                    let chatUsers = data["users"] as? [String] ?? []
+                    var userStore = [String:User]()
+                    self.fetchTheseUsers(userIds: chatUsers) { users in
+                        users.forEach { user in
+                            userStore[user.emailAddress] = user
+                        }
+                        var fetchedMessages = [MessageData]()
+                        let dataComments = data["messages"] as? [[String:String]] ?? []
+                        dataComments.forEach { message in
+                            fetchedMessages.append(MessageData(content: message["content"]!, user: userStore[message["userId"]!]!))
+                        }
+                        handler(fetchedMessages, chatUsers)
+                    }
+                }
+            }
+    }
+    
+    public func addMessageToChat(chatId: String, userId: String, content: String) {
+        let chatRef = database.collection("chats").document(chatId)
+        chatRef.updateData(["messages": FieldValue.arrayUnion([["content": content, "userId": userId]])])
+    }
+    
+    public func addUserToChat(chatId: String, userId: String) {
+        let chatRef = database.collection("chats").document(chatId)
+        chatRef.updateData(["users": FieldValue.arrayUnion([userId])])
+    }
+    
+    public func fetchCommentsFromPost(postId: String, handler: @escaping(_ comments: [Comment]) -> Void) {
+        database.collection("posts").document(postId)
+            .addSnapshotListener { documentSnapshot, error in
+                if let documentSnapshot = documentSnapshot {
+                    var fetchedComments = [Comment]()
+                    let data = documentSnapshot.data()!
+                    let dataComments = data["comments"] as! [[String:String]]
+                    dataComments.forEach { comment in
+                        fetchedComments.append(Comment(userId: comment["userId"]!, comment: comment["comment"]!))
+                    }
+                    handler(fetchedComments)
+                }
+            }
+    }
+    
+    public func addCommentToPost(postId: String, userId: String, comment: String, handler: @escaping(_ success: Bool) -> Void) {
+        let commentRef = database.collection("posts").document(postId)
+        commentRef.updateData(["comments": FieldValue.arrayUnion([["comment": comment, "userId": userId]])]) { err in
+            if (err != nil) {
+                handler(false)
+            } else {
+                handler(true)
             }
         }
     }

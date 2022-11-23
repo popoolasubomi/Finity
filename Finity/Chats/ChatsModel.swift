@@ -45,8 +45,4 @@ class ChatsModel: ObservableObject {
             }
         }
     }
-    
-    public func createChat(chatData: ChatsData) {
-        dbManager.createChatInfo(chatData: chatData)
-    }
 }

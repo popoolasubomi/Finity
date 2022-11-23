@@ -11,12 +11,7 @@ import XNavigation
 struct TimelineView: View {
     
     @EnvironmentObject var navigation: Navigation
-    private let firestoreManager = FirestoreManager()
     @ObservedObject var timelineModel = TimelineModel()
-    
-    init() {
-        timelineModel.fetchTimeline()
-    }
     
     @ViewBuilder
     private var appName: some View {
@@ -58,6 +53,7 @@ struct TimelineView: View {
                             case .users:
                                 UsersView(users: timelineData.users!)
                                     .padding(.bottom)
+                                    .listRowBackground(Color.clear)
                             case .picturePost:
                                 let post = timelineData.post!
                                 PicturePostView(
@@ -66,6 +62,7 @@ struct TimelineView: View {
                                 )
                                     .environmentObject(navigation)
                                     .listRowSeparator(.hidden)
+                                    .listRowBackground(Color.clear)
                                     .frame(height: 350)
                             case .captionPost:
                                 let post = timelineData.post!
@@ -75,6 +72,7 @@ struct TimelineView: View {
                                 )
                                     .environmentObject(navigation)
                                     .listRowSeparator(.hidden)
+                                    .listRowBackground(Color.clear)
                                     .frame(height: 150)
                             }
                         }
@@ -87,6 +85,9 @@ struct TimelineView: View {
                     )
                 }
             }
+        }
+        .onAppear {
+            timelineModel.fetchTimeline()
         }
     }
 }

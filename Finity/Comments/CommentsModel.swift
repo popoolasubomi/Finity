@@ -10,32 +10,39 @@ import Foundation
 class CommentsModel: ObservableObject {
     
     public var post: Post
-    @Published var isFetching: Bool = true
     public var userStore = [String:User]()
-    public var comments = [Comment]()
     public var dbManager = FirestoreManager()
+    
+    @Published var comments = [Comment]()
+    @Published var isFetching: Bool = true
     
     init(post: Post) {
         self.post = post
-        post.comments.forEach { comment in
-            comments.append(Comment(userId: comment["userId"]!, comment: comment["comment"]!))
-        }
-        fetchCommentUsers()
     }
     
-    private func fetchCommentUsers() {
-        // Fetch commenters + current post owner
-        var commenterIds = [String]()
-        commenterIds.append(post.userId)
-        comments.forEach { comment in
-            commenterIds.append(comment.userId)
-        }
+    public func fetchComments() {
         isFetching = true
-        dbManager.fetchTheseUsers(userIds: commenterIds) { users in
-            users.forEach { user in
+        dbManager.fetchCommentsFromPost(postId: post.postId) { comments in
+            var commenterIds = [self.post.userId]
+            comments.forEach { comment in
+                commenterIds.append(comment.userId)
+            }
+            self.dbManager.fetchTheseUsers(userIds: commenterIds) { users in
+                users.forEach { user in
+                    self.userStore[user.emailAddress] = user
+                }
+                self.isFetching = false
+                self.comments = comments
+            }
+        }
+    }
+    
+    public func postComment(comment: String) {
+        let user = GoogleAuthModel().getCurrentUser()
+        dbManager.addCommentToPost(postId: post.postId, userId: user.emailAddress, comment: comment) { success in
+            if success {
                 self.userStore[user.emailAddress] = user
             }
-            self.isFetching = false
         }
     }
 }

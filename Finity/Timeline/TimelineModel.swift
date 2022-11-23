@@ -10,9 +10,10 @@ import UIKit
 class TimelineModel: ObservableObject {
     
     public var timelineArray = [TimelineData]()
-    @Published var isFetching: Bool = true
     private let dbManager = FirestoreManager()
     private var userStore = [String:User]()
+    
+    @Published var isFetching: Bool = true
     
     private func fetchUsers(handler: @escaping(_ users: [User]) -> Void) {
         dbManager.fetchAllUsers { users in
@@ -35,7 +36,6 @@ class TimelineModel: ObservableObject {
     
     public func fetchTimeline() {
         timelineArray.removeAll()
-        isFetching = true
         fetchUsers { users in
             self.timelineArray.append(TimelineData(users: users, section: .users))
             self.fetchPosts { posts in

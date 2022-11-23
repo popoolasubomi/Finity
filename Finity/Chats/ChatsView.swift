@@ -15,7 +15,6 @@ struct ChatsView: View {
     init(entry: ChatsEntry, event: EventData) {
         self.event = event
         self.chatsModel = ChatsModel(event: event, entry: entry)
-        chatsModel.fetchChats()
     }
     
     var body: some View {
@@ -92,6 +91,9 @@ struct ChatsView: View {
                         .padding([.top, .leading])
                 }
             }
+        }
+        .onAppear {
+            chatsModel.fetchChats()
         }
     }
 }

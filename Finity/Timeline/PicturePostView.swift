@@ -79,16 +79,15 @@ struct PicturePostView: View {
                     Spacer()
                 }.padding([.leading, .trailing])
                 HStack {
-                    Button(action: {}) {
+                    Button(action: {print(5)}) {
                         Image(Asset.UNLIKE_HEART.rawValue)
                     }
                     .padding(.leading)
-                    Button(action: {}) {
-                        Image(Asset.CHAT_ICON.rawValue)
-                    }.onTapGesture {
+                    Image(Asset.CHAT_ICON.rawValue)
+                        .onTapGesture {
                         navigation.pushView(CommentsView(post: post))
-                    }
-                    .padding(.leading, 5)
+                        }
+                        .padding(.leading, 5)
                     Spacer()
                 }
             }

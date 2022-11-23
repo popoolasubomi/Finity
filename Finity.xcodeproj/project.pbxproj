@@ -62,6 +62,9 @@
 		83023DAE292AE004004F8250 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023DAD292AE004004F8250 /* MessageView.swift */; };
 		83023DB3292B0E25004F8250 /* PredictHQ_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023DB2292B0E25004F8250 /* PredictHQ_API.swift */; };
 		83023DBF292B6FEC004F8250 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 83023DBE292B6FEC004F8250 /* Alamofire */; };
+		83023DC1292E0EE9004F8250 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023DC0292E0EE9004F8250 /* ImagePickerView.swift */; };
+		83023DC3292E0F28004F8250 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023DC2292E0F28004F8250 /* Coordinator.swift */; };
+		83023DCB292E2831004F8250 /* PostCreationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83023DCA292E2831004F8250 /* PostCreationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +137,9 @@
 		83023DAB292AD609004F8250 /* MessagingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingModel.swift; sourceTree = "<group>"; };
 		83023DAD292AE004004F8250 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		83023DB2292B0E25004F8250 /* PredictHQ_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictHQ_API.swift; sourceTree = "<group>"; };
+		83023DC0292E0EE9004F8250 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		83023DC2292E0F28004F8250 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		83023DCA292E2831004F8250 /* PostCreationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,6 +365,9 @@
 			isa = PBXGroup;
 			children = (
 				83023D92292A1FFA004F8250 /* PostCreationView.swift */,
+				83023DC0292E0EE9004F8250 /* ImagePickerView.swift */,
+				83023DC2292E0F28004F8250 /* Coordinator.swift */,
+				83023DCA292E2831004F8250 /* PostCreationModel.swift */,
 			);
 			path = PostCreation;
 			sourceTree = "<group>";
@@ -544,8 +553,10 @@
 				83023D282925F39D004F8250 /* LaunchScreenStateManager.swift in Sources */,
 				83023D6B2928BE78004F8250 /* Post.swift in Sources */,
 				83023D6D2928C861004F8250 /* UsersView.swift in Sources */,
+				83023DC1292E0EE9004F8250 /* ImagePickerView.swift in Sources */,
 				83023D802929A581004F8250 /* EventData.swift in Sources */,
 				83023D96292A25DA004F8250 /* ChatsView.swift in Sources */,
+				83023DCB292E2831004F8250 /* PostCreationModel.swift in Sources */,
 				83023D262925F374004F8250 /* LaunchScreenStep.swift in Sources */,
 				83023D9D292ABF88004F8250 /* ChatsEntry.swift in Sources */,
 				83023D2F2925F8BF004F8250 /* RegistrationView.swift in Sources */,
@@ -559,6 +570,7 @@
 				83023DA8292AD0A9004F8250 /* MessageData.swift in Sources */,
 				83023DA1292AC0BC004F8250 /* ChatsData.swift in Sources */,
 				83023D642928BAEA004F8250 /* TimelineData.swift in Sources */,
+				83023DC3292E0F28004F8250 /* Coordinator.swift in Sources */,
 				83023D9F292AC047004F8250 /* ChatsModel.swift in Sources */,
 				83023CFB2925EC03004F8250 /* FinityApp.swift in Sources */,
 				83023D822929A599004F8250 /* EventsModel.swift in Sources */,
@@ -732,10 +744,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Finity/Preview Content\"";
-				DEVELOPMENT_TEAM = 7DF23RMRWS;
+				DEVELOPMENT_TEAM = 2G94U33Y34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Finity/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow this app access camera roll";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -746,7 +759,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = aws.Finity;
+				PRODUCT_BUNDLE_IDENTIFIER = aws.test.Finity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -762,10 +775,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Finity/Preview Content\"";
-				DEVELOPMENT_TEAM = 7DF23RMRWS;
+				DEVELOPMENT_TEAM = 2G94U33Y34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Finity/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow this app access camera roll";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -776,7 +790,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = aws.Finity;
+				PRODUCT_BUNDLE_IDENTIFIER = aws.test.Finity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

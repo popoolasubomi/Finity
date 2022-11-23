@@ -9,54 +9,33 @@ import UIKit
 
 class MessagingModel: ObservableObject {
     
-    public var users = [String]()
-    public var chatId: String
     public var chatData: ChatsData
+    private var chatUsers = [String]()
     private let dbManager = FirestoreManager()
-    private let googleAuthModel = GoogleAuthModel()
     
     @Published var messages = [MessageData]()
     @Published var isFetching: Bool = false
     
     init(chatData: ChatsData) {
-        self.chatId = chatData.id
         self.chatData = chatData
-        createChat(chatData: chatData)
-        populateUsers()
-        //startTimer()
     }
     
-    private func startTimer() {
-        //Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(fetchMessages), userInfo: nil, repeats: true)
-    }
-    
-    private func populateUsers() {
-        dbManager.fetchTheseChatUsersIDs(chatId: chatId) { users in
-            self.users = users
+    public func fetchMessages() {
+        dbManager.createChatInfo(chatData: chatData) { success in
+            if success {
+                self.dbManager.fetchMessagesFrom(chatId: self.chatData.id) { messages, users in
+                    self.messages = messages
+                    self.chatUsers = users
+                }
+            }
         }
     }
     
-//    @objc private func fetchMessages() {
-//        print("working")
-//        dbManager.fetchMessagesFrom(chatId: chatId) { messages in
-//            self.messages = messages.reversed()
-//            self.isFetching = false
-//        }
-//
-//    }
-    
     public func sendMessage(content: String) {
-       let user = googleAuthModel.getCurrentUser()
-//        if !users.contains(user.emailAddress) {
-//            dbManager.addUserToChat(chatId: chatId, userId: user.emailAddress, userIds: users)
-//            populateUsers()
-//        }
-//        dbManager.addMessageToChat(chatId: chatId, userId: user.emailAddress, content: content, messages: messages)
-        messages.append(MessageData(content: content, user: user))
+        let user = GoogleAuthModel().getCurrentUser()
+        if !chatUsers.contains(user.emailAddress) {
+            dbManager.addUserToChat(chatId: chatData.id, userId: user.emailAddress)
+        }
+        dbManager.addMessageToChat(chatId: chatData.id, userId: user.emailAddress, content: content)
     }
-    
-    private func createChat(chatData: ChatsData) {
-        dbManager.createChatInfo(chatData: chatData)
-    }
-    
 }

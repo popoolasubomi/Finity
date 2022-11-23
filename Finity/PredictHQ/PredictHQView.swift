@@ -10,14 +10,11 @@ import SwiftUI
 struct PredictHQView: View {
     
     private var post: Post
-    private var commentsModel: CommentsModel
-    private let predictHqModel = PredictHqModel()
+    @ObservedObject var predictHqModel = PredictHqModel()
     private let googleModel = GoogleAuthModel()
     
     init(post: Post) {
         self.post = post
-        self.commentsModel = CommentsModel(post: post)
-        predictHqModel.fetchResonatingArgumentStored(postId: post.postId)
     }
     
     var body: some View {
@@ -26,10 +23,9 @@ struct PredictHQView: View {
                 ProgressView()
                     .progressViewStyle(.circular)
             } else {
-                let postOwner = User(firstName: "subomi", lastName: "popoola", emailAddress: "popoolaogooluwasubomi@gmail.com", profilePictureURL: "https://lh3.googleusercontent.com/a/ALm5wu2C8x-GtoTS_MfI_kgmeOGOSeSpfv1pCz8FsSfq=s100")
                 Spacer()
                 Divider()
-                FullCommentView(user: postOwner, comment: post.caption)
+                FullCommentView(user: predictHqModel.postUser!, comment: post.caption)
                     .padding(.top)
                 Divider()
                 Spacer()
@@ -53,7 +49,7 @@ struct PredictHQView: View {
                         ProgressView()
                             .progressViewStyle(.circular)
                     } else {
-                        Text(predictHqModel.resonatingArgument)
+                        Text(post.flagId ?? "")
                             .foregroundColor(CustomColor.themeColor)
                             .font(Font.custom("HelveticaNeue-Bold", size: 18.5))
                             .padding()
@@ -85,6 +81,8 @@ struct PredictHQView: View {
                     }
                 }
             }
+        }.onAppear {
+            predictHqModel.fetchUser(userId: post.userId)
         }
     }
 }

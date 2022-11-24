@@ -35,8 +35,8 @@ class PredictHQ_API {
         let service = "dataexchange"
         let endpoint = "https://api-fulfill.dataexchange.us-west-2.amazonaws.com/v1/events"
 
-        let access_key = Security.AWS_ACCESS_KEY.rawValue
-        let secret_key = Security.AWS_SECRET_KEY.rawValue
+        let access_key = ProcessInfo.processInfo.environment["access_key"] ?? ""
+        let secret_key =  ProcessInfo.processInfo.environment["secret_key"] ?? ""
 
         let now = Date()
         let dateformatter = DateFormatter()

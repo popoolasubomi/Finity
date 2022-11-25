@@ -38,6 +38,9 @@ class PredictHQ_API {
         let service = "dataexchange"
         let endpoint = "https://api-fulfill.dataexchange.us-west-2.amazonaws.com/v1/events"
 
+        let access_key = Security.AWS_ACCESS_KEY.rawValue
+        let secret_key = Security.AWS_SECRET_KEY.rawValue
+
         let now = Date()
         let dateformatter = DateFormatter()
         dateformatter.timeZone = TimeZone(identifier: "UTC")
@@ -60,11 +63,11 @@ class PredictHQ_API {
         let credential_scope = dateStamp + "/" + region + "/" + service + "/" + "aws4_request"
         let string_to_sign = algorithm + "\n" +  amzdate + "\n" +  credential_scope + "\n" + getHash(data: canonical_request).lowercased()
 
-        let signing_key = getSignatureKey(key: secHash, dateStamp: dateStamp, regionName: region, serviceName: service)
+        let signing_key = getSignatureKey(key: secret_key, dateStamp: dateStamp, regionName: region, serviceName: service)
         
         let signatureBin = string_to_sign.hmac(algorithm: .SHA256, keyStr: signing_key)
         let signature = signatureBin.getHex()
-        let authorization_header = algorithm + " " + "Credential=" + accHash + "/" + credential_scope + ", " +  "SignedHeaders=" + signed_headers + ", " + "Signature=" + signature
+        let authorization_header = algorithm + " " + "Credential=" + access_key + "/" + credential_scope + ", " +  "SignedHeaders=" + signed_headers + ", " + "Signature=" + signature
         let headers = [
             "x-amzn-dataexchange-data-set-id": Security.AWS_DATASET_ID.rawValue,
             "x-amzn-dataexchange-revision-id": Security.AWS_REVISION_ID.rawValue,

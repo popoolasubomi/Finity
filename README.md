@@ -17,10 +17,9 @@ Description: Social Platform that predicts hoaxes within posts and creates commu
 - paste ``` git clone https://github.com/popoolasubomi/Finity``` on local terminal
 - Ensure you have xcode installed
 - Open the cloned project in Xcode
-- To setup authentication, Go to product, then Scheme, & select choose scheme, (select 'Edit')
-<img width="777" alt="Screen Shot 2022-11-24 at 3 04 34 PM" src="https://user-images.githubusercontent.com/52616005/203857510-24f7907b-7bb1-4b7f-904f-43494aa54a6a.png"> 
-- Navigate to Arguments Tab and add your ```access_key``` & ```secret_key``` in the environment variables
-<img width="1412" alt="[Screen Shot 2022-11-24 at 3 18 30 PM" src="https://user-images.githubusercontent.com/52616005/203858816-41b74125-ab80-4823-8c5f-8f8dc37e30d5.png">
+- Ensure you have access to predict_HQ_API with your access key and secret key
+- Go to the ```Libraries/Security.swift``` dir of the project and slot in your access key and security key in the ```AWS_ACCESS_KEY``` and ```AWS_SECRET_KEY``` respectively 
+<img width="1412" alt="Screen Shot 2022-11-25 at 2 50 03 AM" src="https://user-images.githubusercontent.com/52616005/203928737-dc4a2002-b868-4946-97db-e918bbe3ae59.png">
 - click build or cmd + R
 
 Note: Make sure you have a device set on Xcode to properly build

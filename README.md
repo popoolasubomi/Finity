@@ -6,10 +6,8 @@ Description: Social Platform that predicts hoaxes within posts and creates commu
 ## How to test
 
 ### Strategy(1) Use Test Flight 
-#### Not available yet beacuse waiting on apple to approve external test builds
-
-- Click on [] with your phone browser
-- You might need to install testflight
+- Paste https://testflight.apple.com/join/rNVSTOgN on your phone browser
+- You might be requested to install testflight
 - Follow the instructions and install the app on your device
 
 
